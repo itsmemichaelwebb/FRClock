@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input Data</title>
+		<link rel="stylesheet" href="assets/inputstyles.css">
+        <script src="./scripts.js"></script>
+        <link rel="icon" href="assets/favicon.ico">
+	</head>
+	<body>
+		<p>
+			EVENT CLOCK CURRENT
+		</p>
+		<form action="success.php" method="POST">
+			<fieldset id="field">
+				<legend>Input your event information.</legend>
+				<p>Team Key: <input id="team" type="text" name="team_key"></p>
+				<p>Event Key: <input id="event" type="text" name="event_key"></p>
+				<p>Use Latest Event <input id="latest" type="checkbox" name="latest"></p>
+                <p><input class="inputButtons" id="advanced" type="button" name="advanced" value="Advanced Options" onclick="toggleOptions()"></p>
+                <div id="options" style="display: none;">
+                    <p>Refresh Interval (minutes): <input id="refresh" type="text" name="refresh" value=".06"></p>
+                    <p>Queue Alarm Start (minutes): <input id="alarm" type="text" name="alarm" value="17"></p>
+                    <p>Time Zone String Override: <input id="tz_manual" type="text" name="tz_manual" value="America/New_York"></p>
+                </div>
+				<input class="inputButtons" type="submit" value="Enter">
+			</fieldset>
+		</form>
+		<script>
+            var optionsDisplayed = false;
+			document.getElementById("latest").onchange = function() {
+				document.getElementById("event").disabled = this.checked;
+				document.getElementById("event").value = null;
+				document.getElementById("event").style.backgroundColor = document.getElementById("event").disabled ? "#404040" : "#191919";
+			};
+
+            function toggleOptions() {
+                optionsDisplayed ? optionsDisplayed = false : optionsDisplayed = true;
+                document.getElementById("options").style.display = optionsDisplayed ? "inline" : "none";
+            }
+
+            document.getElementById("field").innerHTML += "<input name='tz_string' style='display: none;' value=" + getTimeZone() + ">";
+		</script>
+        <p id="instructions"> Textarea null = <a href="null" target="_blank">null</a>.</p>
+	</body>
+</html>
