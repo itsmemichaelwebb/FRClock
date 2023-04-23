@@ -1,4 +1,4 @@
-![](https://labs.openai.com/s/iwkvDuweGnPyrFfkc0lD1TcO)
+![](https://openai-labs-public-images-prod.azureedge.net/user-NQvpBKPhOk3WXMQxqOYjehqQ/generations/generation-iwkvDuweGnPyrFfkc0lD1TcO/image.jpg)
 # FRC Countdown Clock
 The FRC Countdown Clock is a useful tool for teams participating in the FIRST Robotics Competition. It provides a countdown to the team's next match, ensuring that everyone is aware of the timing and can be properly prepared. The program generates a web page displaying information related to a specific FIRST Robotics Competition  team's participation in an event. The page displays a countdown to the team's next match, a table showing the team's matches and opponents, a panel with information on the team's next match and current match, and a panel with the team's current status in the competition.
 
